@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import colors from "../../utils/colors";
 
 export default function Login() {
@@ -9,6 +9,7 @@ export default function Login() {
         source={require("../../../assets/login.png")}
         style={styles.loginImage}
       />
+
       <View style={styles.subContainer}>
         <Text
           style={{
@@ -16,14 +17,37 @@ export default function Login() {
             color: colors.WHITE,
             paddingTop: 20,
             paddingLeft: 15,
+            paddingRight: 15,
+            textAlign: "center",
           }}
         >
-          Nâng tầm sắc đẹp với dịch vụ {""}
+          Let's Find
           <Text style={{ fontWeight: "bold" }}>
-            chăm sóc móng tay và làm tóc
+            {" "}
+            Professional Cleaning and repair
           </Text>{" "}
-          Chuyên Nghiệp
+          Service
         </Text>
+
+        <Text
+          style={{
+            fontSize: 17,
+            color: colors.WHITE,
+            textAlign: "center",
+            marginTop: 20,
+          }}
+        >
+          Best app to find service near you which deliver you a professional
+          service
+        </Text>
+
+        <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <Text
+            style={{ fontSize: 17, textAlign: "center", color: colors.PRIMARY }}
+          >
+            Let's Get Started
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -45,5 +69,12 @@ const styles = StyleSheet.create({
     marginTop: -20,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
+  },
+  button: {
+    margin: 15,
+    padding: 15,
+    backgroundColor: colors.WHITE,
+    borderRadius: 99,
+    marginTop: 40,
   },
 });
