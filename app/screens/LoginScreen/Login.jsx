@@ -1,8 +1,13 @@
+import { useCallback } from "react";
 import { StatusBar } from "expo-status-bar";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import colors from "../../utils/colors";
 
-export default function Login() {
+export default function Login({ navigation }) {
+  const goToHome = () => {
+    navigation.replace("Tabs"); // Sử dụng navigation để điều hướng
+  };
+
   return (
     <View style={{ alignItems: "center" }}>
       <Image
@@ -41,7 +46,7 @@ export default function Login() {
           service
         </Text>
 
-        <TouchableOpacity style={styles.button} onPress={() => {}}>
+        <TouchableOpacity style={styles.button} onPress={goToHome}>
           <Text
             style={{ fontSize: 17, textAlign: "center", color: colors.PRIMARY }}
           >
