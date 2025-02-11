@@ -21,7 +21,7 @@ export default function TabsNavigation() {
         component={HomeScreen}
         options={{
           tabBarLabel: ({ color }) => (
-            <Text style={{ fontSize: 12, color: color }}>Home</Text>
+            <Text style={{ fontSize: 10, color: color }}>Chính</Text>
           ),
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="home" size={size} color={color} />
@@ -33,7 +33,7 @@ export default function TabsNavigation() {
         component={BookingScreen}
         options={{
           tabBarLabel: ({ color }) => (
-            <Text style={{ fontSize: 12, color: color }}>Booking</Text>
+            <Text style={{ fontSize: 10, color: color }}>Dịch vụ</Text>
           ),
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="bookmark" size={size} color={color} />
@@ -45,7 +45,7 @@ export default function TabsNavigation() {
         component={ProfileScreen}
         options={{
           tabBarLabel: ({ color }) => (
-            <Text style={{ fontSize: 12, color: color }}>Profile</Text>
+            <Text style={{ fontSize: 10, color: color }}>Tài khoản</Text>
           ),
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="user-circle" size={size} color={color} />

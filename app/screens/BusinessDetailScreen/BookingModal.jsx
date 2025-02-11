@@ -1,4 +1,10 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import colors from "../../utils/colors";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import CalendarPicker from "react-native-calendar-picker";
@@ -7,6 +13,7 @@ import { useEffect, useState } from "react";
 
 export default function BookingModal({ hideModal }) {
   const [timeList, setTimeList] = useState();
+  const [selectedTime, setSelectedTime] = useState();
 
   useEffect(() => {
     getTime();
@@ -61,6 +68,24 @@ export default function BookingModal({ hideModal }) {
           selectedDayTextColor={colors.WHITE}
         />
       </View>
+
+      {/* Time select section */}
+      <View>
+        <Heading text="Chọn khoảng thời gian" />
+        <FlatList
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          data={timeList}
+          renderItem={({ item, index }) => (
+            <TouchableOpacity
+              style={styles.selectedTimeItem}
+              onPress={() => setSelectedTime(item.time)}
+            >
+              <Text style={styles.unSelectedTime}>{item.time}</Text>
+            </TouchableOpacity>
+          )}
+        />
+      </View>
     </View>
   );
 }
@@ -83,5 +108,28 @@ const styles = StyleSheet.create({
     backgroundColor: colors.PRIMARY_LIGHT,
     padding: 20,
     borderRadius: 15,
+    marginBottom: 20,
+  },
+
+  selectedTimeItem: {
+    marginRight: 10,
+  },
+
+  selectedTime: {
+    padding: 8,
+    borderWidth: 1,
+    borderColor: colors.PRIMARY,
+    borderRadius: 20,
+    paddingHorizontal: 18,
+    backgroundColor: colors.PRIMARY,
+    color: colors.WHITE,
+  },
+
+  unSelectedTime: {
+    padding: 8,
+    borderWidth: 1,
+    borderColor: colors.PRIMARY,
+    borderRadius: 20,
+    paddingHorizontal: 18,
   },
 });

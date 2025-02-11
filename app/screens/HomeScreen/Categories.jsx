@@ -49,7 +49,13 @@ export default function Categories() {
                   source={{ uri: item?.icon?.url }}
                 />
               </View>
-              <Text style={{ marginTop: 5, fontFamily: "outfit-medium" }}>
+              <Text
+                style={{
+                  marginTop: 5,
+                  fontFamily: "outfit-medium",
+                  fontSize: 14,
+                }}
+              >
                 {item?.name}
               </Text>
             </TouchableOpacity>

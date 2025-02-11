@@ -22,6 +22,7 @@ export default function BusinessList() {
       <Heading text="Dịch vụ ưa thích" isViewAll={true} />
       <FlatList
         data={businessLists}
+        keyExtractor={(item) => item.id}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item, index }) => (

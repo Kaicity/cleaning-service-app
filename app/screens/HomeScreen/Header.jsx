@@ -33,7 +33,7 @@ export default function Header() {
         <TextInput placeholder="Tìm kiếm" style={styles.textInput} />
         <Feather
           name="search"
-          size={20}
+          size={22}
           color={colors.PRIMARY}
           style={styles.btnSearch}
         />
@@ -77,14 +77,14 @@ const styles = StyleSheet.create({
   textInput: {
     backgroundColor: colors.WHITE,
     width: "85%",
-    padding: 12,
+    padding: 10,
     paddingHorizontal: 16,
     borderRadius: 8,
     fontFamily: "outfit",
   },
 
   btnSearch: {
-    padding: 10,
+    padding: 8,
     backgroundColor: colors.WHITE,
     borderRadius: 8,
   },
