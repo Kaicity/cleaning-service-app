@@ -5,7 +5,7 @@ import colors from "../../utils/colors";
 
 export default function Login({ navigation }) {
   const goToHome = () => {
-    navigation.replace("Tabs"); // Sử dụng navigation để điều hướng
+    navigation.replace("tabs"); // Sử dụng navigation để điều hướng
   };
 
   return (
@@ -26,12 +26,12 @@ export default function Login({ navigation }) {
             textAlign: "center",
           }}
         >
-          Let's Find
+          Cùng chúng tôi
           <Text style={{ fontWeight: "bold" }}>
             {" "}
-            Professional Cleaning and repair
+            Trải nghiệm dịch vụ dọn vệ sinh
           </Text>{" "}
-          Service
+          dành cho bạn
         </Text>
 
         <Text
@@ -40,17 +40,18 @@ export default function Login({ navigation }) {
             color: colors.WHITE,
             textAlign: "center",
             marginTop: 20,
+            padding: 10,
           }}
         >
-          Best app to find service near you which deliver you a professional
-          service
+          Ứng dụng cho phép tìm những dịch vụ tiện ích dọn dẹp vệ sinh nội thất,
+          nhà cửa
         </Text>
 
         <TouchableOpacity style={styles.button} onPress={goToHome}>
           <Text
             style={{ fontSize: 17, textAlign: "center", color: colors.PRIMARY }}
           >
-            Let's Get Started
+            Bắt đầu ngay
           </Text>
         </TouchableOpacity>
       </View>

@@ -11,8 +11,18 @@ export default function Header() {
         <View style={styles.profileContainer}>
           <Image style={styles.userImage} source={UserAvatar} />
           <View>
-            <Text style={{ color: colors.WHITE }}>Welcome, </Text>
-            <Text style={{ color: colors.WHITE, fontSize: 20 }}>Game play</Text>
+            <Text style={{ color: colors.WHITE, fontFamily: "outfit" }}>
+              Xin chào,{" "}
+            </Text>
+            <Text
+              style={{
+                color: colors.WHITE,
+                fontSize: 20,
+                fontFamily: "outfit-medium",
+              }}
+            >
+              Quang Hùng Master D
+            </Text>
           </View>
         </View>
         <Feather name="bookmark" size={27} color={colors.WHITE} />
@@ -20,7 +30,7 @@ export default function Header() {
 
       {/* Search bar */}
       <View style={styles.searchBarContainer}>
-        <TextInput placeholder="Search" style={styles.textInput} />
+        <TextInput placeholder="Tìm kiếm" style={styles.textInput} />
         <Feather
           name="search"
           size={20}
@@ -70,6 +80,7 @@ const styles = StyleSheet.create({
     padding: 12,
     paddingHorizontal: 16,
     borderRadius: 8,
+    fontFamily: "outfit",
   },
 
   btnSearch: {
