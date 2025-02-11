@@ -1,5 +1,6 @@
 import {
   Image,
+  Modal,
   ScrollView,
   StyleSheet,
   Text,
@@ -13,6 +14,7 @@ import colors from "../../utils/colors";
 import Entypo from "@expo/vector-icons/Entypo";
 import Heading from "../../components/Heading";
 import BusinessPhoto from "./BusinessPhoto";
+import BookingModal from "./BookingModal";
 
 export default function BusinessDetail() {
   const param = useRoute().params;
@@ -20,6 +22,7 @@ export default function BusinessDetail() {
 
   const [business, setBusiness] = useState(param.business);
   const [isReadMore, setIsReadMore] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     business && (
@@ -153,7 +156,10 @@ export default function BusinessDetail() {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.bookingBtn}>
+          <TouchableOpacity
+            style={styles.bookingBtn}
+            onPress={() => setShowModal(true)}
+          >
             <Text
               style={{
                 fontSize: 18,
@@ -166,6 +172,10 @@ export default function BusinessDetail() {
             </Text>
           </TouchableOpacity>
         </View>
+
+        <Modal animationType="slide" visible={showModal}>
+          <BookingModal hideModal={() => setShowModal(false)} />
+        </Modal>
       </View>
     )
   );
