@@ -7,6 +7,7 @@ import TabsNavigation from "./app/navigations/Navigations";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
 import BusinessListByCategory from "./app/screens/BusinessListByCategory/BusinessListByCategory";
+import BusinessDetail from "./app/screens/BusinessDetailScreen/BusinessDetail";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ export default function App() {
         <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="tabs" component={TabsNavigation} />
         <Stack.Screen name="business-list" component={BusinessListByCategory} />
+        <Stack.Screen name="business-detail" component={BusinessDetail} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>

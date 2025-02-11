@@ -1,11 +1,17 @@
-import { useEffect, useState } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import colors from "../../utils/colors";
 import Entypo from "@expo/vector-icons/Entypo";
+import { useNavigation } from "@react-navigation/native";
 
 export default function BusinessListItem({ business }) {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() =>
+        navigation.navigate("business-detail", { business: business })
+      }
+    >
       <View style={styles.itemContainer}>
         <Image style={styles.image} source={{ uri: business.images[0].url }} />
         <View>
@@ -37,7 +43,7 @@ export default function BusinessListItem({ business }) {
           </Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
